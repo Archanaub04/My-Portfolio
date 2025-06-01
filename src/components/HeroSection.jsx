@@ -1,3 +1,4 @@
+import { ArrowDown } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
@@ -18,12 +19,12 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="">
+          <p className="text-md md:text-lg max-auto text-muted-foreground opacity-0 animate-fade-in-delay-3 ">
             I’m a full-stack web developer crafting fast and scalable web apps.
             I specialize in Laravel, React, and modern JavaScript — blending
             clean backend architecture with sleek frontend experiences.
           </p>
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mt-6">
+          <p className="text-sm uppercase tracking-widest mt-6">
             Tech I work with:
           </p>
 
@@ -46,8 +47,26 @@ const HeroSection = () => {
               delaySpeed={1500}
             />
           </div>
+
+          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+            <div className="cosmic-button w-[170px] justify-center mx-auto">
+              <a href="#projects">View My Works</a>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* animate scroll */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-1/2 flex flex-col items-center">
+        <div className="w-6 h-10 rounded-full border-2 border-primary flex items-start justify-center">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1 animate-bounce"></div>
+        </div>
+      </div>
+
+      {/* <div className="absolute bottom-6 left-1/2 transform -translate-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-sm text-muted-foreground mb-2">Scroll</span>
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </div> */}
     </section>
   );
 };

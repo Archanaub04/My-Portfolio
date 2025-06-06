@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { skills, categories } from "../datas/skillsData";
+import { skills, categories } from "@/datas/skillsData";
 
 const SkillSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -26,7 +26,7 @@ const SkillSection = () => {
   };
 
   return (
-    <section id="skills" className="py-16 px-4 relative bg-secondary/30">
+    <section id="skills" className="py-24 px-4 relative bg-secondary/10">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           My <span className="text-primary">Skills</span>

@@ -201,6 +201,10 @@
   @apply p-1.5 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-110;
 }
 
+@utility iconbutton {
+  @apply bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-primary/25
+}
+
 /*
 it gives meteor gives the glowing trail.
 meteor linear path to right gradient - path from white via white path to disappear so using transparent 

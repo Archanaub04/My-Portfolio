@@ -38,7 +38,7 @@ const ProjectsSection = () => {
                 {/* Left Link - Demo */}
                 <a
                   href={project.demoURL}
-                  className="linkbutton bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground  hover:shadow-primary/25"
+                  className="linkbutton iconbutton"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Live Demo"

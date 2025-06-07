@@ -29,8 +29,6 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/10">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-10 -z-0" />
-
       <div className="container mx-auto max-w-5xl relative z-10">
         {/* Section Heading */}
         <motion.div
@@ -38,7 +36,7 @@ const ContactSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="text-center mb-16"
+          className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="text-primary">Touch</span>
@@ -200,7 +198,7 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={3}
                   className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 resize-none"
                   placeholder="Hello, I'd like to talk about..."
                   required

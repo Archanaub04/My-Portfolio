@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { projects } from "@/datas/ProjectsData";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, ArrowRight } from "lucide-react";
 
 const ProjectsSection = () => {
   const [showAllTags, setShowAllTags] = useState({});
@@ -143,9 +143,22 @@ const ProjectsSection = () => {
 
         {/* View More Section */}
         <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary-hover transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl hover:shadow-primary/25">
-            View All Projects
-          </button>
+          <a
+            href="https://github.com/Archanaub04"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+            className="group cosmic-button relative inline-flex items-center gap-2 w-fit mx-auto font-semibold hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-lg"
+          >
+            <span className="absolute inset-0 rounded-full bg-primary opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></span>
+            <span className="relative z-10 flex items-center gap-2">
+              Check My GitHub
+              <Github
+                size={18}
+                className="transition-transform duration-300 group-hover:rotate-[10deg] group-hover:scale-110"
+              />
+            </span>
+          </a>
         </div>
       </div>
     </section>

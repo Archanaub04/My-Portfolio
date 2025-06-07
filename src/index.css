@@ -205,6 +205,14 @@
   @apply bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-primary/25
 }
 
+@utility primary-glow {
+  box-shadow: 0 0 12px 4px rgba(99, 102, 241, 0.4)
+}
+
+@utility skillCard {
+  @apply border border-border/20 bg-card rounded-lg p-5 transition-all duration-300 hover:border-primary/50 shadow-md hover:shadow-xl hover:primary-glow hover:scale-[1.02]
+}
+
 /*
 it gives meteor gives the glowing trail.
 meteor linear path to right gradient - path from white via white path to disappear so using transparent 

@@ -18,6 +18,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-sm text-muted-foreground text-center flex-1"
         >
           &copy; {new Date().getFullYear()} Archanaub.co. All rights reserved.

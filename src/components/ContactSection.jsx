@@ -8,27 +8,12 @@ import {
   Twitter,
 } from "lucide-react";
 import { FaStackOverflow } from "react-icons/fa";
-import { cn } from "@/lib/utils";
+import { cn, fadeIn, staggerContainer } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 const ContactSection = () => {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 

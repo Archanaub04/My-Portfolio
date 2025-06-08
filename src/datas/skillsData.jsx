@@ -28,6 +28,7 @@ const getProficiencyLevel = (percentage) => {
 export const skills = [
   // Backend
   {
+    id: 1,
     name: "Laravel",
     level: 95,
     proficiency: "Expert",
@@ -35,6 +36,7 @@ export const skills = [
     icon: <FaLaravel className="text-red-500" />,
   },
   {
+    id: 2,
     name: "CodeIgniter",
     level: 90,
     proficiency: "Expert",
@@ -42,6 +44,7 @@ export const skills = [
     icon: <SiCodeigniter className="text-[#dd4814]" />,
   },
   {
+    id: 3,
     name: "MySQL",
     level: 95,
     proficiency: "Expert",
@@ -49,6 +52,7 @@ export const skills = [
     icon: <FaDatabase className="text-blue-500" />,
   },
   {
+    id: 4,
     name: "REST APIs",
     level: 90,
     proficiency: "Expert",
@@ -56,6 +60,7 @@ export const skills = [
     icon: <FaServer className="text-green-500" />,
   },
   {
+    id: 5,
     name: "PHP",
     level: 90,
     proficiency: "Expert",
@@ -65,6 +70,7 @@ export const skills = [
 
   // Frontend
   {
+    id: 6,
     name: "Bootstrap",
     level: 90,
     proficiency: "Expert",
@@ -72,6 +78,7 @@ export const skills = [
     icon: <FaBootstrap className="text-[#7952B3]" />,
   },
   {
+    id: 7,
     name: "JQuery",
     level: 80,
     proficiency: "Advanced",
@@ -79,6 +86,7 @@ export const skills = [
     icon: <FaJs className="text-[#0769AD]" />,
   },
   {
+    id: 8,
     name: "JavaScript",
     level: 60,
     proficiency: "Intermediate",
@@ -86,6 +94,7 @@ export const skills = [
     icon: <FaJs className="text-yellow-400" />,
   },
   {
+    id: 9,
     name: "AJAX",
     level: 60,
     proficiency: "Intermediate",
@@ -93,6 +102,7 @@ export const skills = [
     icon: <FaJs className="text-blue-400" />,
   },
   {
+    id: 10,
     name: "HTML/CSS",
     level: 95,
     proficiency: "Expert",
@@ -100,6 +110,7 @@ export const skills = [
     icon: <FaHtml5 className="text-orange-500" />,
   },
   {
+    id: 11,
     name: "React JS",
     level: 20,
     proficiency: "Beginner",
@@ -107,6 +118,7 @@ export const skills = [
     icon: <FaReact className="text-blue-400" />,
   },
   {
+    id: 12,
     name: "Tailwind CSS",
     level: 50,
     proficiency: "Intermediate",
@@ -116,6 +128,7 @@ export const skills = [
 
   // Tools
   {
+    id: 13,
     name: "Git/GitHub",
     level: 70,
     proficiency: "Advanced",
@@ -123,6 +136,7 @@ export const skills = [
     icon: <FaGitAlt className="text-orange-600" />,
   },
   {
+    id: 14,
     name: "Postman",
     level: 80,
     proficiency: "Advanced",
@@ -130,6 +144,7 @@ export const skills = [
     icon: <SiPostman className="text-[#FF6C37]" />,
   },
   {
+    id: 15,
     name: "VS Code",
     level: 90,
     proficiency: "Expert",
@@ -139,6 +154,7 @@ export const skills = [
 
   // services
   {
+    id: 16,
     name: "AWS (S3, SNS)",
     level: 70,
     proficiency: "Advanced",
@@ -146,6 +162,7 @@ export const skills = [
     icon: <FaAws className="text-[#FF9900]" />,
   },
   {
+    id: 17,
     name: "Stripe",
     level: 70,
     proficiency: "Advanced",

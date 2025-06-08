@@ -8,11 +8,12 @@ export const cn = (...inputs) => {
 /* ---------------- framer motion -------------------------- */
 
 export const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 },
+    // transition: { duration: 0.6 },
+    transition: { type: "spring", stiffness: 60, damping: 12 },
   },
   hover: {
     x: -4,

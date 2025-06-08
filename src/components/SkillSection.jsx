@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn, fadeIn, staggerContainer } from "@/lib/utils";
 import { skills, categories } from "@/datas/skillsData";
+import { motion } from "framer-motion";
 
 const SkillSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -8,6 +9,8 @@ const SkillSection = () => {
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
+  console.log(filteredSkills);
 
   // get color by prficiency level
   const getProficiencyColor = (proficiency) => {
@@ -28,20 +31,36 @@ const SkillSection = () => {
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/10">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
+        {/* Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ margin: "0px 0px -100px 0px" }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+            My <span className="text-primary">Skills</span>
+          </h2>
 
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
-          Here's a showcase of my technical skills and expertise. Filter by
-          category to see specific skills.
-        </p>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
+            Here's a showcase of my technical skills and expertise. Filter by
+            category to see specific skills.
+          </p>
+        </motion.div>
 
         {/* categories */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          className="flex flex-wrap justify-center gap-2 mb-8"
+        >
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category.id}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className={cn(
                 "px-4 py-1.5 rounded-full transition-all duration-300 text-sm flex items-center gap-1.5",
                 activeCategory === category.id
@@ -51,22 +70,33 @@ const SkillSection = () => {
               onClick={() => setActiveCategory(category.id)}
             >
               {category.name}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* skills */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          viewport={{ margin: "0px 0px -100px 0px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+        >
+          {filteredSkills.map((skill) => (
+            <motion.div
+              key={skill.id}
+              variants={fadeIn}
+              whileHover={{ y: -5 }}
               className="bg-card p-3 rounded-lg border border-border/50 hover:shadow-sm transition-all duration-300 card-hover hover:scale-[1.02] group"
             >
               {/* skill logo */}
               <div className="flex items-center gap-2">
-                <div className="text-2xl p-1.5 rounded-md bg-background group-hover:bg-primary/10 transition-colors duration-300">
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  className="text-2xl p-1.5 rounded-md bg-background group-hover:bg-primary/10 transition-colors duration-300"
+                >
                   {skill.icon}
-                </div>
+                </motion.div>
 
                 {/* skill name & category */}
                 <div>
@@ -94,7 +124,11 @@ const SkillSection = () => {
 
                 {/* proficiency level progress bar */}
                 <div className="w-full bg-secondary/30 h-1.5 rounded-full overflow-hidden">
-                  <div
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.2 }}
                     className={cn(
                       "h-full rounded-full bg-gradient-to-r origin-left animate-[grow_1.5s_ease-out] transition-all duration-1000 ease-out",
                       skill.proficiency === "Expert" &&
@@ -110,16 +144,20 @@ const SkillSection = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {filteredSkills.length === 0 && (
-          <div className="text-center py-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center py-8"
+          >
             <p className="text-muted-foreground">
               No skills found in this category
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

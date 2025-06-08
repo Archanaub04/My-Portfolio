@@ -103,9 +103,11 @@ const HeroSection = () => {
         transition={{ delay: 0.8 }}
         className="absolute bottom-6 left-1/2 transform -translate-1/2 flex flex-col items-center"
       >
-        <div className="w-6 h-10 rounded-full border-2 border-primary flex items-start justify-center">
-          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1 animate-bounce"></div>
-        </div>
+        <a href="#about">
+          <div className="w-6 h-10 rounded-full border-2 border-primary flex items-start justify-center">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1 animate-bounce"></div>
+          </div>
+        </a>
       </motion.div>
 
       {/* <div className="absolute bottom-6 left-1/2 transform -translate-1/2 flex flex-col items-center animate-bounce">

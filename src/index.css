@@ -14,6 +14,7 @@
 
   --color-success: hsl(var(--success));
   --color-warning: hsl(var(--warning));
+  --color-normal: hsl(var(--normal));
 
   --animate--float: float 6s ease-in-out infinite;
   --animate--pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -104,6 +105,8 @@
     --primary-hover: 250 65% 70%;
     --secondary: 210 40% 90%;
 
+    --normal: 222 47% 11%;
+
     --border: 214 32% 91%;
 
     --success: 142 71% 45%;
@@ -120,6 +123,8 @@
     --primary-foreground: 213 31% 91%;
     --primary-hover: 250 65% 70%;
     --secondary: 222 47% 15%;
+
+    --normal: 0 0% 100%;
 
     --border: 217 33% 20%;
 

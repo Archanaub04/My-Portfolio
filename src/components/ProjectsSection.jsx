@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { projects } from "@/datas/ProjectsData";
-import { ExternalLink, Github, Code2, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, Code2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/lib/utils";
 
 const ProjectsSection = () => {
   const [showAllTags, setShowAllTags] = useState({});
@@ -9,34 +11,64 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ margin: "0px 0px -100px 0px" }}
+          className="text-center mb-12"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+          >
             <Code2 size={16} className="text-primary" />
             <span className="text-sm font-medium text-primary">
               Featured Work
             </span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-3xl md:text-4xl font-bold mb-4"
+          >
             Featured <span className="text-primary">Projects</span>
-          </h2>
-          <p className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto"
+          >
             Here are some of my recent projects. Each project was carefully
             crafted with attention to detail, performance, and user experience
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={staggerContainer}
+          viewport={{ margin: "0px 0px -100px 0px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {projects.map((project) => (
-            <div
+            // project card ------------------------------
+            <motion.div
               key={project.id}
+              variants={fadeIn}
               className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]"
             >
               {/* Top Bar with Links on Both Sides */}
               <div className="flex items-center justify-between p-1 bg-secondary/30 border-b border-border/30">
                 {/* Left Link - Demo */}
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   href={project.demoURL}
                   className="linkbutton iconbutton"
                   target="_blank"
@@ -44,10 +76,14 @@ const ProjectsSection = () => {
                   title="Live Demo"
                 >
                   <ExternalLink size={15} />
-                </a>
+                </motion.a>
 
                 {/* Status Bar Below Top Bar */}
-                <div className="px-4 py-2 bg-secondary/20 border-b border-border/20">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="px-4 py-2 bg-secondary/20 border-b border-border/20"
+                >
                   <div
                     className={`inline-flex px-3 py-1 text-xs font-medium rounded-full ${
                       project.status === "Completed"
@@ -57,10 +93,12 @@ const ProjectsSection = () => {
                   >
                     {project.status}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Right Link - GitHub */}
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   href={project.gitHubURL}
                   className="linkbutton bg-foreground/10 text-foreground hover:bg-foreground hover:text-background hover:shadow-foreground/25 hover:scale-110"
                   target="_blank"
@@ -68,7 +106,7 @@ const ProjectsSection = () => {
                   title="GitHub"
                 >
                   <Github size={15} />
-                </a>
+                </motion.a>
               </div>
 
               {/* Image */}
@@ -94,22 +132,23 @@ const ProjectsSection = () => {
                 </p>
 
                 {/* Description */}
-                <p className="text-sm text-foreground/70 mb-4 line-clamp-3">
+                <p className="text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <motion.div className="flex flex-wrap gap-2">
                   {(showAllTags[project.id]
                     ? project.tags
                     : project.tags.slice(0, 6)
                   ).map((tag, index) => (
-                    <span
+                    <motion.span
                       key={index}
-                      className="px-2 py-1 text-xs font-medium bg-secondary/60 text-foreground/80 rounded-md border border-border/30 hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      className="px-2 py-1 text-xs text-normal font-medium bg-secondary/60 rounded-md border border-border/30 hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all duration-300"
                     >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                   {/* only show 6 tags and hide other and when clcik that expand uisng state
                         eg:
@@ -121,7 +160,9 @@ const ProjectsSection = () => {
                         }
                     */}
                   {project.tags.length > 6 && (
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={() =>
                         setShowAllTags((prev) => ({
                           ...prev,
@@ -133,17 +174,25 @@ const ProjectsSection = () => {
                       {showAllTags[project.id]
                         ? "Show Less"
                         : `+${project.tags.length - 6} more`}
-                    </button>
+                    </motion.button>
                   )}
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
+            // ----------------------------------------------------------------
           ))}
-        </div>
+        </motion.div>
 
         {/* View More Section */}
-        <div className="text-center mt-12">
-          <a
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center mt-12"
+        >
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             href="https://github.com/Archanaub04"
             target="_blank"
             rel="noopener noreferrer"
@@ -158,8 +207,8 @@ const ProjectsSection = () => {
                 className="transition-transform duration-300 group-hover:rotate-[10deg] group-hover:scale-110"
               />
             </span>
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

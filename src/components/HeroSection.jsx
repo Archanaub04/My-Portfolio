@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
 
 const HeroSection = () => {
+  const roles = [
+    "Full-Stack Developer",
+    "Backend Developer",
+    "PHP Developer",
+    "Aspiring Frontend Developer",
+  ];
+
   return (
     <section
       id="hero"
@@ -29,6 +36,22 @@ const HeroSection = () => {
               U B
             </span>
           </motion.h1>
+
+          {/* Role subtitle with typewriter effect */}
+          <motion.div
+            variants={fadeIn}
+            className="text-lg md:text-2xl text-primary/90 h-8 md:h-10 flex items-center justify-center font-medium"
+          >
+            <Typewriter
+              words={roles}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={50}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
+          </motion.div>
 
           <p className="text-md md:text-lg max-auto text-muted-foreground opacity-0 animate-fade-in-delay-3 ">
             I’m a full-stack web developer crafting fast and scalable web apps.

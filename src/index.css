@@ -211,7 +211,7 @@
 }
 
 @utility primary-glow {
-  box-shadow: 0 0 12px 4px rgba(99, 102, 241, 0.4)
+  box-shadow: 0 0 12px 4px rgba(99, 102, 241, 0.4);
 }
 
 @utility skillCard {

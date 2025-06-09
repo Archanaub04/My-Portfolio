@@ -41,7 +41,7 @@ const ProjectsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto"
+            className="text-center mb-8 max-w-2xl mx-auto"
           >
             Here are some of my recent projects. Each project was carefully
             crafted with attention to detail, performance, and user experience

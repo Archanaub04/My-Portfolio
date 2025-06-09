@@ -16,7 +16,7 @@ const ExperienceSection = () => {
     <section id="experience" className="py-24 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from transparent via-primary/5 to primary"></div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-5xl relative z-10">
         {/* Header */}
         <motion.div
           initial="hidden"
@@ -45,7 +45,7 @@ const ExperienceSection = () => {
           // viewport={{ once: true }}
           transition={getTimelineTransition()}
           variants={timelineContainerVariants}
-          className="realtive"
+          className="relative max-w-5xl mx-auto"
         >
           <VerticalTimeline lineColor="hsl(var(--border))" animate={true}>
             {experiences.map((experience, index) => (

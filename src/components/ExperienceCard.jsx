@@ -23,8 +23,8 @@ const ExperienceCard = ({ experience, index }) => {
         border: "1px solid hsl(var(--border))",
         borderRadius: "8px",
         boxShadow: "0 4px 12px rgba(99, 102, 241, 0.4)",
-        padding: "16px",
-        margin: "8px 0",
+        padding: "12px",
+        margin: "4px 0",
       }}
       contentArrowStyle={{
         borderRight: "7px solid hsl(var(--card))",
@@ -93,10 +93,10 @@ const ExperienceCard = ({ experience, index }) => {
           </div>
         </div>
 
-        <ul className="space-y-1.5 mb-3 text-left">
+        <ul className="space-y-1.5 mb-2 text-left">
           {experience.points.map((point, pointIndex) => (
             <motion.li
-              key={pointIndex}
+              key={pointIndex}  
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}

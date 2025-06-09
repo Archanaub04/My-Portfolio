@@ -233,3 +233,8 @@ meteor linear path to right gradient - path from white via white path to disappe
   padding: 0;
   text-align: center;
 }
+
+.vertical-timeline-element {
+  margin: 16px 0 !important;
+}
+

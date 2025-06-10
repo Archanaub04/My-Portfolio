@@ -26,7 +26,7 @@ const EducationCard = ({ education, index }) => {
         </div>
 
         {/* Meta information */}
-        <div className="flex flex-wrap gap-4 mb-5 text-sm text-foreground/70">
+        <div className="flex flex-wrap gap-4 mb-5 text-sm text-foreground/70 justify-center">
           <div className="flex items-center gap-1.5">
             <Calendar className="w-4 h-4" />
             {education.duration}

@@ -8,6 +8,7 @@ export const educationData = [
     grade: "7.82 CGPA",
     courses: [
       "Java",
+      "C++",
       "Data Structures",
       "Algorithms",
       "Database Systems",
@@ -19,7 +20,7 @@ export const educationData = [
   },
   {
     id: 2,
-    degree: "BSC Computer Science",
+    degree: "Bachelor of Science in Computer Science",
     institution: "College of Applied Science, Neruvambram",
     location: "Kannur, Kerala",
     duration: "2015 - 2018",

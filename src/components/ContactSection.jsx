@@ -51,7 +51,7 @@ const ContactSection = () => {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="text-primary">Touch</span>
+            Get In <span className="text-primary text-glow">Touch</span>
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach

@@ -35,7 +35,7 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Featured <span className="text-primary">Projects</span>
+            Featured <span className="text-primary text-glow">Projects</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

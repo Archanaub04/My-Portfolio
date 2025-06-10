@@ -15,7 +15,7 @@ const AboutSection = () => {
           className="text-center mb-12 md:mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            About <span className="text-primary">Me</span>
+            About <span className="text-primary text-glow">Me</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
             My professional journey and future aspirations

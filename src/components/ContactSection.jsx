@@ -11,32 +11,74 @@ import { FaStackOverflow } from "react-icons/fa";
 import { cn, fadeIn, staggerContainer } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const formRef = useRef();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      setName("");
-      setEmail("");
-      setMessage("");
-    }, 1500);
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          from_name: form.name,
+          to_name: "Archana U B",
+          from_email: form.email,
+          to_email: "archanaub649@gmail.com",
+          message: form.message,
+        },
+        publicKey
+      )
+      .then(
+        () => {
+          // setTimeout(() => {
+          toast({
+            title: "Message sent!",
+            description:
+              "Thank you for your message. I'll get back to you soon as possible.",
+          });
+          setIsSubmitting(false);
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+          // }, 1500);
+        },
+        (error) => {
+          setIsSubmitting(false);
+          console.log(error);
+          toast({
+            title: "Something went wrong!",
+            description: "Failed to send message. Please try again later.",
+            variant: "destructive",
+          });
+        }
+      );
   };
 
   return (
@@ -59,7 +101,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        {/* Grid: Left Info - Right Form */}
+        {/* ------------------------ Grid: Left Info - Right Form ----------------------- */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -67,7 +109,7 @@ const ContactSection = () => {
           variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 gap-12"
         >
-          {/* Left: Contact Info */}
+          {/* --------------------- Left: Contact Info --------------- */}
           <motion.div variants={fadeIn} className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6 mt-4">
               Contact Information
@@ -163,15 +205,16 @@ const ContactSection = () => {
               </div>
             </motion.div>
           </motion.div>
+          {/* ------------------------------------------------------------- */}
 
-          {/* Right: Contact Form */}
+          {/* --------------- Right: Contact Form ------------------------- */}
           <motion.div
             variants={fadeIn}
             className="bg-card p-6 rounded-lg shadow-lg"
           >
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4" ref={formRef} onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -183,8 +226,8 @@ const ContactSection = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={form.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
                   placeholder="John Doe..."
                   required
@@ -202,8 +245,8 @@ const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={form.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
                   placeholder="john@gmail.com..."
                   required
@@ -220,8 +263,8 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  value={form.message}
+                  onChange={handleChange}
                   rows={3}
                   className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 resize-none"
                   placeholder="Hello, I'd like to talk about..."

@@ -10,8 +10,6 @@ const SkillSection = () => {
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
 
-  console.log(filteredSkills);
-
   // get color by prficiency level
   const getProficiencyColor = (proficiency) => {
     switch (proficiency) {

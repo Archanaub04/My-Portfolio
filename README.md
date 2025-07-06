@@ -2,7 +2,7 @@
 
 Welcome to my personal **React Developer Portfolio** built using **React.js**, **Tailwind CSS v4**, and **Framer Motion**. This project showcases my skills, projects, and experiences in a modern, interactive, and responsive design.
 
-![portfolio-preview](/My-Portfolio/public/projects/my-portfolio.png)
+![portfolio-preview](./public/projects/my-portfolio.png)
 
 ---
 

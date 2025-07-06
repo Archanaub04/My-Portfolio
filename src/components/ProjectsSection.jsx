@@ -61,7 +61,7 @@ const ProjectsSection = () => {
             <motion.div
               key={project.id}
               variants={fadeIn}
-              className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]"
+              className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]"
             >
               {/* Top Bar with Links on Both Sides */}
               <div className="flex items-center justify-between p-1 bg-secondary/30 border-b border-border/30">

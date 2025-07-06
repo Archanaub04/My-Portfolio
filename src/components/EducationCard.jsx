@@ -7,7 +7,7 @@ const EducationCard = ({ education, index }) => {
     <motion.div
       variants={cardVariants}
       className="relative group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 
-          hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 
+          hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-lg hover:shadow-primary/10 
           hover:-translate-y-1 h-full"
     >
       {/* Content */}

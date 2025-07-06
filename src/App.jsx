@@ -6,7 +6,7 @@ import ProjectsPage from "./components/ProjectsPage";
 import ProjectDetail from "./components/ProjectDetail";
 
 
-function App() {
+function App() { 
   return (
     <>
       <Toaster />

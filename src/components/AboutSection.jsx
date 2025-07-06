@@ -64,7 +64,7 @@ const AboutSection = () => {
               </div>
 
               <motion.a
-                href="/cv/Archana U B - PHP Full Stack Developer.pdf"
+                href="/My-Portfolio/cv/Archana U B - PHP Full Stack Developer.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}

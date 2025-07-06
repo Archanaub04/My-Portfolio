@@ -162,7 +162,7 @@ const NewProjectsSection = () => {
                         "Highlight Project"}
                     </p>
                     <MotionLink
-                      to={`/projects/${featuredProjects[activeIndex]?.slug}`}
+                      to={`/My-Portfolio/projects/${featuredProjects[activeIndex]?.slug}`}
                       whileHover={{ scale: 1.1, rotate: 45 }}
                       whileTap={{ scale: 0.9 }}
                       className="p-2 rounded-full hover:text-white hover:bg-card-500/40 transition-all duration-300 cursor-pointer"

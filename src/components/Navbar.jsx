@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Skills", href: "/#skills" },
-  { name: "Experience", href: "/#experience" },
-  { name: "Education", href: "/#education" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About", href: "/My-Portfolio/#about" },
+  { name: "Skills", href: "/My-Portfolio/#skills" },
+  { name: "Experience", href: "/My-Portfolio/#experience" },
+  { name: "Education", href: "/My-Portfolio/#education" },
+  { name: "Projects", href: "/My-Portfolio/#projects" },
+  { name: "Contact", href: "/My-Portfolio/#contact" },
 ];
 
 const Navbar = () => {

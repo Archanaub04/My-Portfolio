@@ -57,7 +57,10 @@ const AllProjectsSection = () => {
         >
           {projects.map((project) => (
             // project card ------------------------------
-            <Link to={`/projects/${project.slug}`} key={project.id}>
+            <Link
+              to={`/My-Portfolio/projects/${project.slug}`}
+              key={project.id}
+            >
               <motion.div
                 variants={fadeIn}
                 className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]"

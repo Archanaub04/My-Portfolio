@@ -100,7 +100,7 @@ export const projects = [
     colorEnd: "#312e81",
     image: "/My-Portfolio/projects/my-portfolio.png",
     tags: ["React JS", "Tailwind CSS", "Vite", "Framer Motion"],
-    demoURL: "#",
+    demoURL: "https://archanaub04.github.io/My-Portfolio/",
     gitHubURL: "https://github.com/Archanaub04/My-Portfolio",
     status: "Completed",
     featured: true,

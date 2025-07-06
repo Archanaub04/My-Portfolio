@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/My-Portfolio/" },
   { name: "About", href: "/My-Portfolio/#about" },
   { name: "Skills", href: "/My-Portfolio/#skills" },
   { name: "Experience", href: "/My-Portfolio/#experience" },
@@ -34,14 +34,14 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-xl font-bold text-primary flex items-center mr-20"
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground">Archana</span> Portfolio
           </span>
-        </a>
+        </Link>
 
         {/* ----------------- desktop navbar ------------ */}
         <div className="hidden md:flex space-x-8 flex-grow justify-center">

@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-bold text-primary flex items-center mr-20"
+          className="text-xl font-bold text-primary flex items-center mr-20" 
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground">Archana</span> Portfolio

@@ -52,7 +52,7 @@ export const projects = [
       "Stripe",
       "Spatie Media Library",
     ],
-    demoURL: "#",
+    demoURL: "",
     gitHubURL: "https://github.com/Archanaub04/Laravel-React-E-Commerce",
     status: "Development",
     featured: true,

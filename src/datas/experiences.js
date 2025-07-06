@@ -7,7 +7,7 @@ export const experiences = [
     period: "August 2024 - April 2025",
     location: "Kannur, Kerala",
     type: "Full-time",
-    logo: "/company_logos/weamse.jfif",
+    logo: "/My-Portfolio/company_logos/weamse.jfif",
     color: "#F7981F",
     points: [
       "Built 30+ RESTful APIs using Laravel and CodeIgniter, ensuring seamless data exchange and scalability.",
@@ -44,7 +44,7 @@ export const experiences = [
     period: "April 2022 - July 2024",
     location: "Kannur, Kerala",
     type: "Full-time",
-    logo: "/company_logos/NETPLEX.jfif",
+    logo: "/My-Portfolio/company_logos/NETPLEX.jfif",
     color: "#2E6862",
     points: [
       "Developed and elevated web applications using PHP, Laravel, and CodeIgniter, enhancing both front-end and back-end functionality forimproved user experience.",
@@ -74,7 +74,7 @@ export const experiences = [
     period: "March 2021 - June 2021",
     location: "Kannur, Kerala",
     type: "Internship",
-    logo: "/company_logos/kiebot.jfif",
+    logo: "/My-Portfolio/company_logos/kiebot.jfif",
     color: "#00235D",
     points: [
       "Contributed to the development of e-commerce application features using React Native.",

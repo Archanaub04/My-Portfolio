@@ -58,7 +58,7 @@ const AllProjectsSection = () => {
           {projects.map((project) => (
             // project card ------------------------------
             <Link
-              to={`/My-Portfolio/projects/${project.slug}`}
+              to={`/projects/${project.slug}`}
               key={project.id}
             >
               <motion.div

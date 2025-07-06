@@ -2,12 +2,14 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, ArrowRight, Code2 } from "lucide-react";
 import { projects } from "@/datas/ProjectsData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NewProjectsSection = () => {
   const MotionLink = motion(Link);
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const featuredProjects =
     projects?.filter((p) => p.featured)?.slice(0, 6) ||
@@ -162,7 +164,7 @@ const NewProjectsSection = () => {
                         "Highlight Project"}
                     </p>
                     <MotionLink
-                      to={`/My-Portfolio/projects/${featuredProjects[activeIndex]?.slug}`}
+                      to={`/projects/${featuredProjects[activeIndex]?.slug}`}
                       whileHover={{ scale: 1.1, rotate: 45 }}
                       whileTap={{ scale: 0.9 }}
                       className="p-2 rounded-full hover:text-white hover:bg-card-500/40 transition-all duration-300 cursor-pointer"
@@ -170,7 +172,9 @@ const NewProjectsSection = () => {
                         e.preventDefault();
                         window.scrollTo(0, 0);
                         setTimeout(() => {
-                          window.location.href = `/projects/${featuredProjects[activeIndex]?.slug}`;
+                          navigate(
+                            `/projects/${featuredProjects[activeIndex]?.slug}`
+                          );
                         }, 100);
                       }}
                     >
@@ -204,7 +208,9 @@ const NewProjectsSection = () => {
                     onClick={() => {
                       window.scrollTo(0, 0);
                       setTimeout(() => {
-                        window.location.href = `/projects/${featuredProjects[activeIndex]?.slug}`;
+                        navigate(
+                          `/projects/${featuredProjects[activeIndex]?.slug}`
+                        );
                       }, 100);
                     }}
                   >
@@ -245,8 +251,9 @@ const NewProjectsSection = () => {
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo(0, 0);
+
               setTimeout(() => {
-                window.location.href = "/projects";
+                navigate("/projects");
               }, 100);
             }}
           >

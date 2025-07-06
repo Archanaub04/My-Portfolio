@@ -9,7 +9,7 @@ import ProjectDetail from "./components/ProjectDetail";
 function App() { 
   return (
     <>
-      <Toaster />
+      <Toaster />      
       <BrowserRouter basename="/My-Portfolio/">
         <Routes>
           <Route index element={<Home />} />

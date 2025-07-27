@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { projects } from "@/datas/ProjectsData";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProjectsSection = () => {
   const [showAllTags, setShowAllTags] = useState({});
+
+  const navigate = useNavigate();
+
+  const featuredProjects =
+    projects?.filter((p) => p.featured)?.slice(0, 6) ||
+    projects?.slice(0, 3) ||
+    [];
+
+  const projectCount = featuredProjects.length;
+
+  if (projectCount === 0) return null;
 
   return (
     <section id="projects" className="py-20 px-4 relative">
@@ -56,7 +68,7 @@ const ProjectsSection = () => {
           viewport={{ margin: "0px 0px -100px 0px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projects.map((project) => (
+          {featuredProjects.map((project) => (
             // project card ------------------------------
             <motion.div
               key={project.id}
@@ -184,7 +196,7 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* View More Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -208,7 +220,32 @@ const ProjectsSection = () => {
               />
             </span>
           </motion.a>
-        </motion.div>
+        </motion.div> */}
+
+        {/* ----------- View All Button ----------- */}
+        <div className="text-center mt-16">
+          <Link
+            to="/projects"
+            className="group cosmic-button relative inline-flex items-center gap-2 w-fit mx-auto font-semibold hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-lg cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo(0, 0);
+
+              setTimeout(() => {
+                navigate("/projects");
+              }, 100);
+            }}
+          >
+            <span className="absolute inset-0 rounded-full bg-primary opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></span>
+            <span className="relative z-10 flex items-center gap-2 text-sm">
+              View All Projects
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );

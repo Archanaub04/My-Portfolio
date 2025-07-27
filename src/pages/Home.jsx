@@ -48,8 +48,8 @@ const Home = () => {
         <SkillSection />
         <ExperienceSection />
         <EducationSection />
-        {/* <ProjectsSection /> */}
-        <NewProjectsSection />
+        <ProjectsSection />
+        {/* <NewProjectsSection /> */}
         <ContactSection />
       </main>
 
